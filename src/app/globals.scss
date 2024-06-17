@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.box-width {
+	max-width: 1280px;
+	margin: auto;
+}
+.padding-x {
+	@apply sm:px-16 px-6 xl:px-0;
+}
+
+.hero-white {
+	background-color: rgba($color: white, $alpha: 0.5);
+}
+
+.btn-prev {
+	@apply bg-red-500 rounded-md px-2 py-1 text-blue-700;
+	background-color: rgba($color: #3b82f6, $alpha: 0.3);
+}
+
+.mobile-navigation {
+	@media screen and (max-width: 768px) {
+		position: absolute;
+		top: 50px;
+		z-index: 10;
+		display: flex;
+		flex-direction: column;
+    animation: slideLeft 1s forwards;
+		// Using apply
+		@apply p-8 bg-white rounded-md border-none;
+		a {
+			color: black;
+		}
+	}
+}
+
+@keyframes slideLeft {
+	from {
+    right:-300px
+	}
+	to {
+    right: 100%;
+	}
+}
